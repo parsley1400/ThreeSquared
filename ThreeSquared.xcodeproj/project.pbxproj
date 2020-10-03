@@ -13,6 +13,8 @@
 		81F8F39D25245871001991EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F8F39B25245871001991EE /* Main.storyboard */; };
 		81F8F39F25245873001991EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F8F39E25245873001991EE /* Assets.xcassets */; };
 		81F8F3A225245873001991EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F8F3A025245873001991EE /* LaunchScreen.storyboard */; };
+		81F8F3AA252458AA001991EE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8F3A9252458AA001991EE /* GameViewController.swift */; };
+		81F8F3AC252458BC001991EE /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8F3AB252458BC001991EE /* HowToViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		81F8F39E25245873001991EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81F8F3A125245873001991EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81F8F3A325245873001991EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81F8F3A9252458AA001991EE /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		81F8F3AB252458BC001991EE /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				81F8F39525245871001991EE /* AppDelegate.swift */,
 				81F8F39725245871001991EE /* SceneDelegate.swift */,
 				81F8F39925245871001991EE /* ViewController.swift */,
+				81F8F3A9252458AA001991EE /* GameViewController.swift */,
+				81F8F3AB252458BC001991EE /* HowToViewController.swift */,
 				81F8F39B25245871001991EE /* Main.storyboard */,
 				81F8F39E25245873001991EE /* Assets.xcassets */,
 				81F8F3A025245873001991EE /* LaunchScreen.storyboard */,
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F8F3AA252458AA001991EE /* GameViewController.swift in Sources */,
 				81F8F39A25245871001991EE /* ViewController.swift in Sources */,
 				81F8F39625245871001991EE /* AppDelegate.swift in Sources */,
 				81F8F39825245871001991EE /* SceneDelegate.swift in Sources */,
+				81F8F3AC252458BC001991EE /* HowToViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

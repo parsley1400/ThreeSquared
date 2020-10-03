@@ -9,10 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var gameButton: UIButton!
+    @IBOutlet var howToButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        gameButton.layer.cornerRadius = 20
+        howToButton.layer.cornerRadius = 20
     }
 
 
