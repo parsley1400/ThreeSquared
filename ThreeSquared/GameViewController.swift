@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class GameViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout ,UIGestureRecognizerDelegate {
     
     @IBOutlet var bestScoreLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
@@ -33,8 +33,21 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(
+        target: self,
+        action: #selector(GameViewController.tapped(_:)))
+        
+        tapGesture.delegate = self
+        self.ruleView.addGestureRecognizer(tapGesture)
+        
         shuffle()
     }
+    
+    @objc func tapped(_ sender: UITapGestureRecognizer){
+           if sender.state == .ended {
+               print("タップ")
+           }
+       }
     
     func shuffle(){
         colorArray.shuffle()
@@ -52,21 +65,25 @@ class GameViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         
-        let cell:UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ColorCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ColorCollectionViewCell
         
-        let imageView = cell.contentView.viewWithTag(1) as! UIImageView
-        cell.image.image = pinkPiece
-        
-//        cell.layer.cornerRadius = 10
+        let colorNumber = colorArray[0]
+
+        if colorNumber == 1{
+            cell.image.image = pinkPiece
+        }else if colorNumber == 2{
+            cell.image.image = whitePiece
+        }else if colorNumber == 3{
+            cell.image.image = bluePiece
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell:UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-    
-        let imageView = cell.contentView.viewWithTag(1) as! UIImageView
-        imageView.image = whitePiece
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ColorCollectionViewCell
+        
+        cell.image.image = bluePiece
         
 //        let colorNumber = colorArray[0]
 //
