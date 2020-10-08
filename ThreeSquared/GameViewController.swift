@@ -54,6 +54,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     var timer8: Timer = Timer()
     var timer9: Timer = Timer()
     var timerScore: Timer = Timer()
+    var timerBack: Timer = Timer()
 
     var yoko:Bool = false
     var tate:Bool = false
@@ -174,8 +175,24 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
         )
     }
     
+    func back(){
+        if fieldArray.allSatisfy({ $0 != "none" }){
+            timerBack = Timer.scheduledTimer(
+                timeInterval: 0.7,
+                target: self,
+                selector: #selector(backHome),
+                userInfo: nil,
+                repeats: false
+            )
+        }
+    }
+    
     @objc func changeScore(){
         scoreLabel.text = String(score)
+    }
+    
+    @objc func backHome(){
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     func useTimer1(){
@@ -387,6 +404,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
             yoko = false
             tate = false
             naname = false
+            back()
             }
            }
        }
@@ -429,6 +447,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
             yoko = false
             tate = false
             naname = false
+            back()
          }
         }
     }
@@ -508,6 +527,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
          yoko = false
          tate = false
          naname = false
+         back()
         }
         }
     }
@@ -550,6 +570,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
          yoko = false
          tate = false
          naname = false
+         back()
         }
         }
     }
@@ -569,8 +590,8 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
              fieldImage5.image = bluePiece
              fieldArray[4] = "blue"
          }
-         
          shuffle()
+         back()
         }
         }
     }
@@ -613,6 +634,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
          yoko = false
          tate = false
          naname = false
+         back()
         }
         }
     }
@@ -691,6 +713,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
          yoko = false
          tate = false
          naname = false
+         back()
         }
         }
     }
@@ -733,6 +756,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
          yoko = false
          tate = false
          naname = false
+         back()
         }
         }
     }
@@ -811,6 +835,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
          yoko = false
          tate = false
          naname = false
+         back()
         }
         }
     }
