@@ -10,6 +10,8 @@ import UIKit
 
 class ResultViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var gameButton: UIButton!
+    @IBOutlet var backButton: UIButton!
     var score: Int = 0
     var scoreArray = [Int]()
     
@@ -17,6 +19,9 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gameButton.layer.cornerRadius = 20
+        backButton.layer.cornerRadius = 20
 
         // Do any additional setup after loading the view.
         scoreLabel.text = String(score)
