@@ -12,6 +12,7 @@ class ResultViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var gameButton: UIButton!
     @IBOutlet var backButton: UIButton!
+    
     var score: Int = 0
     var scoreArray = [Int]()
     
@@ -34,13 +35,13 @@ class ResultViewController: UIViewController {
         scoreArray = saveScore.object(forKey:"score") as! [Int]
     }
     
-    @IBAction func game(){
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func back(){
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
+//    @objc func backGame(){
+//        performSegue(withIdentifier: "backGame", sender: nil)
+//    }
     
 
     /*

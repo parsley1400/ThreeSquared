@@ -78,6 +78,20 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
         fieldView8.layer.cornerRadius = 10
         fieldView9.layer.cornerRadius = 10
         
+        score = 0
+        scoreLabel.text = String(score)
+        
+        fieldImage1.image = nil
+        fieldImage2.image = nil
+        fieldImage3.image = nil
+        fieldImage4.image = nil
+        fieldImage5.image = nil
+        fieldImage6.image = nil
+        fieldImage7.image = nil
+        fieldImage8.image = nil
+        fieldImage9.image = nil
+        fieldArray = ["none","none","none","none","none","none","none","none","none"]
+        
         let tapGesture1:UITapGestureRecognizer = UITapGestureRecognizer(
         target: self,
         action: #selector(GameViewController.tapped1(_:)))
@@ -135,6 +149,11 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
         self.fieldView9.addGestureRecognizer(tapGesture9)
         
         shuffle()
+    }
+    
+    
+    @IBAction func backToGame(segue: UIStoryboardSegue){
+        self.viewDidLoad()
     }
     
     func shuffle(){

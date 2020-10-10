@@ -346,6 +346,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B9J-rv-4dc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="v8M-Da-NX4"/>
                     <connections>
                         <outlet property="bestScoreLabel" destination="Jtc-8w-rKj" id="0lI-fy-flD"/>
                         <outlet property="fieldImage1" destination="SKe-an-s6E" id="uuz-9b-qnY"/>
@@ -435,7 +436,7 @@
                                     <color key="titleColor" red="0.98823529409999999" green="0.94117647059999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="game" destination="BAu-3d-vPP" eventType="touchUpInside" id="rAP-oI-zCm"/>
+                                    <segue destination="X4X-pS-nV4" kind="unwind" unwindAction="backToGameWithSegue:" id="xa1-yx-L5V"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -461,6 +462,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqs-2w-Hum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="X4X-pS-nV4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1521.7391304347827" y="129.91071428571428"/>
         </scene>
