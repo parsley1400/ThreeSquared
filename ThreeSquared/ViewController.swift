@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var gameButton: UIButton!
     @IBOutlet var howToButton: UIButton!
+    
+    var score:Int = 0
+    var scoreArray = [Int]()
+    
+    let saveScore: UserDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +25,17 @@ class ViewController: UIViewController {
         
         gameButton.layer.cornerRadius = 20
         howToButton.layer.cornerRadius = 20
+        
+        if saveScore.object(forKey:"boolean") as? Bool == true{
+        scoreArray = saveScore.object(forKey:"score") as! [Int]
+        scoreArray.sort { $1 < $0 }
+        }
+
+        if scoreArray.count >= 1{
+            score = scoreArray[0]
+        }
+        
+        scoreLabel.text = String(score)
     }
 
 
