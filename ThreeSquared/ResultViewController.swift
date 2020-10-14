@@ -12,6 +12,7 @@ class ResultViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var gameButton: UIButton!
     @IBOutlet var backButton: UIButton!
+    @IBOutlet var scoreShareButton: UIButton!
     
     var score: Int = 0
     var scoreArray = [Int]()
@@ -22,7 +23,8 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         
         gameButton.layer.cornerRadius = 20
-        backButton.layer.cornerRadius = 20
+        backButton.layer.cornerRadius = 15
+        scoreShareButton.layer.cornerRadius = 15
 
         // Do any additional setup after loading the view.
         scoreLabel.text = String(score)
@@ -35,13 +37,25 @@ class ResultViewController: UIViewController {
         scoreArray = saveScore.object(forKey:"score") as! [Int]
     }
     
-    @IBAction func back(){
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    @IBAction func shareButton(){
+
+        UIGraphicsBeginImageContextWithOptions(UIScreen.main.bounds.size, false, 0.0)
+        self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: true)
+        let shareImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        let shareScore = scoreLabel.text
+        
+        let activityItems: [Any] = [shareImage, shareScore ?? "0"]
+        
+        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+        let excludedActivityTypes = [UIActivity.ActivityType.postToWeibo, .saveToCameraRoll, .print]
+        
+        activityViewController.excludedActivityTypes = excludedActivityTypes
+        
+        present(activityViewController, animated: true, completion: nil)
     }
-    
-//    @objc func backGame(){
-//        performSegue(withIdentifier: "backGame", sender: nil)
-//    }
     
 
     /*

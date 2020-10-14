@@ -14,6 +14,9 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var ruleView: UIView!
     @IBOutlet var pieceImage: UIImageView!
+    @IBOutlet var nextPieceImage: UIImageView!
+    @IBOutlet var pieceView: UIView!
+    @IBOutlet var nextPieceView: UIView!
     
     @IBOutlet var fieldView1: UIView!
     @IBOutlet var fieldView2: UIView!
@@ -42,6 +45,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     var bluePiece = UIImage(named:"3squared-9")!
     
     var colorArray: [Int] = [1,2,3]
+    var nextColorArray: [Int] = [1,2,3]
     var fieldArray: [String] = ["none","none","none","none","none","none","none","none","none"]
     
     var timer1: Timer = Timer()
@@ -77,6 +81,8 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
         fieldView7.layer.cornerRadius = 10
         fieldView8.layer.cornerRadius = 10
         fieldView9.layer.cornerRadius = 10
+        pieceView.layer.cornerRadius = 15
+        nextPieceView.layer.cornerRadius = 12
         
         score = 0
         scoreLabel.text = String(score)
@@ -151,13 +157,35 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
         shuffle()
     }
     
-    
     @IBAction func backToGame(segue: UIStoryboardSegue){
         self.viewDidLoad()
     }
     
-    func shuffle(){
+    func firstShuffle(){
         colorArray.shuffle()
+        nextColorArray.shuffle()
+        let colorNumber = colorArray[0]
+        let nextColorNumber = nextColorArray[0]
+        
+        if colorNumber == 1{
+            pieceImage.image = pinkPiece
+        }else if colorNumber == 2{
+            pieceImage.image = whitePiece
+        }else{
+            pieceImage.image = bluePiece
+        }
+        
+        if nextColorNumber == 1{
+            nextPieceImage.image = pinkPiece
+        }else if nextColorNumber == 2{
+            nextPieceImage.image = whitePiece
+        }else{
+            nextPieceImage.image = bluePiece
+        }
+    }
+    
+    func shuffle(){
+        colorArray = nextColorArray
         let colorNumber = colorArray[0]
         
         if colorNumber == 1{
@@ -166,6 +194,17 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
             pieceImage.image = whitePiece
         }else{
             pieceImage.image = bluePiece
+        }
+        
+        nextColorArray.shuffle()
+        let nextColorNumber = nextColorArray[0]
+        
+        if nextColorNumber == 1{
+            nextPieceImage.image = pinkPiece
+        }else if nextColorNumber == 2{
+            nextPieceImage.image = whitePiece
+        }else{
+            nextPieceImage.image = bluePiece
         }
     }
     

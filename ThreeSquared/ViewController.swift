@@ -23,6 +23,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
         gameButton.layer.cornerRadius = 20
         howToButton.layer.cornerRadius = 20
         
@@ -36,6 +38,10 @@ class ViewController: UIViewController {
         }
         
         scoreLabel.text = String(score)
+    }
+    
+    @IBAction func backToHome(segue: UIStoryboardSegue){
+        self.viewDidLoad()
     }
 
 
