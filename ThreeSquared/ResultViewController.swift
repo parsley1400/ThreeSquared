@@ -44,9 +44,9 @@ class ResultViewController: UIViewController {
         let shareImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        let shareScore = scoreLabel.text
+        let shareText = "Scored \(score) points in the 「3squared」 game!! 「3squared」 can be downloaded from https://testflight.apple.com/join/6bqMhkId"
         
-        let activityItems: [Any] = [shareImage, shareScore ?? "0"]
+        let activityItems: [Any] = [shareText, shareImage]
         
         let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         

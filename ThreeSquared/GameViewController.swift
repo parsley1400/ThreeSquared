@@ -64,6 +64,10 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     var tate:Bool = false
     var naname:Bool = false
     
+    var bestScore:Int = 0
+    var scoreArray = [Int]()
+    let saveScore: UserDefaults = UserDefaults.standard
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +101,15 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
         fieldImage8.image = nil
         fieldImage9.image = nil
         fieldArray = ["none","none","none","none","none","none","none","none","none"]
+        
+        if saveScore.object(forKey:"boolean") as? Bool == true{
+        scoreArray = saveScore.object(forKey:"score") as! [Int]
+        scoreArray.sort { $1 < $0 }
+        }
+        if scoreArray.count >= 1{
+            bestScore = scoreArray[0]
+        }
+        bestScoreLabel.text = String(bestScore)
         
         let tapGesture1:UITapGestureRecognizer = UITapGestureRecognizer(
         target: self,
@@ -242,7 +255,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
                 userInfo: nil,
                 repeats: false
             )
-        }
+            }
     }
     
     @objc func changeScore(){
@@ -250,7 +263,9 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     @objc func toResult(){
+        if fieldArray.allSatisfy({ $0 != "none" }){
         performSegue(withIdentifier: "toResult", sender: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
@@ -469,8 +484,8 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
             yoko = false
             tate = false
             naname = false
-            finish()
             }
+            finish()
            }
        }
     
@@ -512,8 +527,8 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
             yoko = false
             tate = false
             naname = false
-            finish()
          }
+         finish()
         }
     }
     
@@ -592,8 +607,8 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
          yoko = false
          tate = false
          naname = false
-         finish()
         }
+        finish()
         }
     }
     
@@ -635,8 +650,8 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
          yoko = false
          tate = false
          naname = false
-         finish()
         }
+        finish()
         }
     }
     
@@ -656,8 +671,8 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
              fieldArray[4] = "blue"
          }
          shuffle()
-         finish()
         }
+        finish()
         }
     }
     
@@ -699,8 +714,8 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
          yoko = false
          tate = false
          naname = false
-         finish()
         }
+        finish()
         }
     }
     
@@ -778,8 +793,8 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
          yoko = false
          tate = false
          naname = false
-         finish()
         }
+        finish()
         }
     }
     
@@ -821,8 +836,8 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
          yoko = false
          tate = false
          naname = false
-         finish()
         }
+        finish()
         }
     }
     
@@ -900,8 +915,8 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
          yoko = false
          tate = false
          naname = false
-         finish()
         }
+        finish()
         }
     }
     
