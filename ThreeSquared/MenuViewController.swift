@@ -1,23 +1,31 @@
 //
-//  HowToViewController.swift
+//  MenuViewController.swift
 //  ThreeSquared
 //
-//  Created by risako takeya on 2020/09/30.
+//  Created by risako takeya on 2020/10/15.
 //  Copyright © 2020 Paseri Takeya. All rights reserved.
 //
 
 import UIKit
 
-class HowToViewController: UIViewController {
+class MenuViewController: UIViewController {
     
-    @IBOutlet var backView: UIView!
+    @IBOutlet var continueButton: UIButton!
+    @IBOutlet var againButton: UIButton!
+    @IBOutlet var homeButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        againButton.layer.cornerRadius = 15
+        homeButton.layer.cornerRadius = 15
+        continueButton.layer.cornerRadius = 20
 
         // Do any additional setup after loading the view.
-        
-        backView.layer.cornerRadius = 20
+    }
+    
+    @IBAction func continueGame(){
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
 

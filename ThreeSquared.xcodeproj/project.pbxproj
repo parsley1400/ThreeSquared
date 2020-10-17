@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61DB9693EEC87C68B4309768 /* Pods_ThreeSquared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1713C8A956DFC0B969ACDA3B /* Pods_ThreeSquared.framework */; };
+		81309F35253B0999006938E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81309F34253B0999006938E8 /* GoogleService-Info.plist */; };
+		81309F37253B10BE006938E8 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81309F36253B10BE006938E8 /* UserViewController.swift */; };
+		81985A142538076300ADD03C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81985A132538076300ADD03C /* MenuViewController.swift */; };
 		81B8A3B92531A9390088443F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B8A3B82531A9390088443F /* ResultViewController.swift */; };
 		81F8F39625245871001991EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8F39525245871001991EE /* AppDelegate.swift */; };
 		81F8F39825245871001991EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8F39725245871001991EE /* SceneDelegate.swift */; };
@@ -19,6 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12F6B18A92D9007D3A5E6D9F /* Pods-ThreeSquared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeSquared.debug.xcconfig"; path = "Target Support Files/Pods-ThreeSquared/Pods-ThreeSquared.debug.xcconfig"; sourceTree = "<group>"; };
+		1713C8A956DFC0B969ACDA3B /* Pods_ThreeSquared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThreeSquared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D522A2903538EE9F6BE68FF /* Pods-ThreeSquared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeSquared.release.xcconfig"; path = "Target Support Files/Pods-ThreeSquared/Pods-ThreeSquared.release.xcconfig"; sourceTree = "<group>"; };
+		81309F34253B0999006938E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		81309F36253B10BE006938E8 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		81985A132538076300ADD03C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		81B8A3B82531A9390088443F /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		81F8F39225245870001991EE /* ThreeSquared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeSquared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F8F39525245871001991EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61DB9693EEC87C68B4309768 /* Pods_ThreeSquared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78264B870253EAD7EE23F135 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1713C8A956DFC0B969ACDA3B /* Pods_ThreeSquared.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		81F8F38925245870001991EE = {
 			isa = PBXGroup;
 			children = (
 				81F8F39425245870001991EE /* ThreeSquared */,
 				81F8F39325245870001991EE /* Products */,
+				8D3A1ECAE2BE55676CCFFEBD /* Pods */,
+				78264B870253EAD7EE23F135 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,12 +89,24 @@
 				81F8F3A9252458AA001991EE /* GameViewController.swift */,
 				81B8A3B82531A9390088443F /* ResultViewController.swift */,
 				81F8F3AB252458BC001991EE /* HowToViewController.swift */,
+				81985A132538076300ADD03C /* MenuViewController.swift */,
+				81309F36253B10BE006938E8 /* UserViewController.swift */,
 				81F8F39B25245871001991EE /* Main.storyboard */,
 				81F8F39E25245873001991EE /* Assets.xcassets */,
 				81F8F3A025245873001991EE /* LaunchScreen.storyboard */,
 				81F8F3A325245873001991EE /* Info.plist */,
+				81309F34253B0999006938E8 /* GoogleService-Info.plist */,
 			);
 			path = ThreeSquared;
+			sourceTree = "<group>";
+		};
+		8D3A1ECAE2BE55676CCFFEBD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				12F6B18A92D9007D3A5E6D9F /* Pods-ThreeSquared.debug.xcconfig */,
+				5D522A2903538EE9F6BE68FF /* Pods-ThreeSquared.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81F8F3A625245873001991EE /* Build configuration list for PBXNativeTarget "ThreeSquared" */;
 			buildPhases = (
+				D93FA8AD205A864062DE6891 /* [CP] Check Pods Manifest.lock */,
 				81F8F38E25245870001991EE /* Sources */,
 				81F8F38F25245870001991EE /* Frameworks */,
 				81F8F39025245870001991EE /* Resources */,
+				0BF7436A3548B66DC8B516D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81F8F3A225245873001991EE /* LaunchScreen.storyboard in Resources */,
+				81309F35253B0999006938E8 /* GoogleService-Info.plist in Resources */,
 				81F8F39F25245873001991EE /* Assets.xcassets in Resources */,
 				81F8F39D25245871001991EE /* Main.storyboard in Resources */,
 			);
@@ -142,14 +178,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0BF7436A3548B66DC8B516D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThreeSquared/Pods-ThreeSquared-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThreeSquared/Pods-ThreeSquared-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThreeSquared/Pods-ThreeSquared-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D93FA8AD205A864062DE6891 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThreeSquared-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		81F8F38E25245870001991EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				81F8F3AA252458AA001991EE /* GameViewController.swift in Sources */,
+				81309F37253B10BE006938E8 /* UserViewController.swift in Sources */,
 				81F8F39A25245871001991EE /* ViewController.swift in Sources */,
 				81F8F39625245871001991EE /* AppDelegate.swift in Sources */,
+				81985A142538076300ADD03C /* MenuViewController.swift in Sources */,
 				81F8F39825245871001991EE /* SceneDelegate.swift in Sources */,
 				81F8F3AC252458BC001991EE /* HowToViewController.swift in Sources */,
 				81B8A3B92531A9390088443F /* ResultViewController.swift in Sources */,
@@ -294,9 +374,11 @@
 		};
 		81F8F3A725245873001991EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12F6B18A92D9007D3A5E6D9F /* Pods-ThreeSquared.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = 8653WK2CD9;
 				INFOPLIST_FILE = ThreeSquared/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,9 +394,11 @@
 		};
 		81F8F3A825245873001991EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D522A2903538EE9F6BE68FF /* Pods-ThreeSquared.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = 8653WK2CD9;
 				INFOPLIST_FILE = ThreeSquared/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

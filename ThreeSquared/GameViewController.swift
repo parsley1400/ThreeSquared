@@ -17,6 +17,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     @IBOutlet var nextPieceImage: UIImageView!
     @IBOutlet var pieceView: UIView!
     @IBOutlet var nextPieceView: UIView!
+    @IBOutlet var menuButton: UIButton!
     
     @IBOutlet var fieldView1: UIView!
     @IBOutlet var fieldView2: UIView!
@@ -64,6 +65,10 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     var tate:Bool = false
     var naname:Bool = false
     
+    var pink:Int = 0
+    var blue:Int = 0
+    var white:Int = 0
+    
     var bestScore:Int = 0
     var scoreArray = [Int]()
     let saveScore: UserDefaults = UserDefaults.standard
@@ -87,6 +92,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
         fieldView9.layer.cornerRadius = 10
         pieceView.layer.cornerRadius = 15
         nextPieceView.layer.cornerRadius = 12
+        menuButton.layer.cornerRadius = 10
         
         score = 0
         scoreLabel.text = String(score)
@@ -195,6 +201,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
         }else{
             nextPieceImage.image = bluePiece
         }
+        nextPieceImage.alpha = 0.7
     }
     
     func shuffle(){
@@ -203,14 +210,39 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
         
         if colorNumber == 1{
             pieceImage.image = pinkPiece
+            pink += 1
+            white = 0
+            blue = 0
         }else if colorNumber == 2{
             pieceImage.image = whitePiece
+            white += 1
+            blue = 0
+            pink = 0
         }else{
             pieceImage.image = bluePiece
+            blue += 1
+            pink = 0
+            white = 0
         }
         
         nextColorArray.shuffle()
-        let nextColorNumber = nextColorArray[0]
+        var nextColorNumber = nextColorArray[0]
+        
+        if pink >= 4{
+            var thisArray = [2,3]
+            thisArray.shuffle()
+            nextColorNumber = thisArray[0]
+        }
+        if white >= 4{
+            var thisArray = [3,1]
+            thisArray.shuffle()
+            nextColorNumber = thisArray[0]
+        }
+        if blue >= 4{
+            var thisArray = [2,1]
+            thisArray.shuffle()
+            nextColorNumber = thisArray[0]
+        }
         
         if nextColorNumber == 1{
             nextPieceImage.image = pinkPiece
@@ -219,6 +251,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
         }else{
             nextPieceImage.image = bluePiece
         }
+        nextPieceImage.alpha = 0.7
     }
     
     func scoreCount(){

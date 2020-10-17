@@ -44,7 +44,7 @@ class ResultViewController: UIViewController {
         let shareImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        let shareText = "Scored \(score) points in the 「3squared」 game!! 「3squared」 can be downloaded from https://testflight.apple.com/join/6bqMhkId"
+        let shareText = "Scored \(score) points in the 「3squared」 game!! 「3squared」 can be downloaded from　https://apps.apple.com/us/app/3squared/id1535477339"
         
         let activityItems: [Any] = [shareText, shareImage]
         
