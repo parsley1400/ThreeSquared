@@ -10,6 +10,7 @@
 		61DB9693EEC87C68B4309768 /* Pods_ThreeSquared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1713C8A956DFC0B969ACDA3B /* Pods_ThreeSquared.framework */; };
 		81309F35253B0999006938E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81309F34253B0999006938E8 /* GoogleService-Info.plist */; };
 		81309F37253B10BE006938E8 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81309F36253B10BE006938E8 /* UserViewController.swift */; };
+		81309F3B253D7F88006938E8 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81309F3A253D7F88006938E8 /* RankingViewController.swift */; };
 		81985A142538076300ADD03C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81985A132538076300ADD03C /* MenuViewController.swift */; };
 		81B8A3B92531A9390088443F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B8A3B82531A9390088443F /* ResultViewController.swift */; };
 		81F8F39625245871001991EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8F39525245871001991EE /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 		5D522A2903538EE9F6BE68FF /* Pods-ThreeSquared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThreeSquared.release.xcconfig"; path = "Target Support Files/Pods-ThreeSquared/Pods-ThreeSquared.release.xcconfig"; sourceTree = "<group>"; };
 		81309F34253B0999006938E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81309F36253B10BE006938E8 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		81309F3A253D7F88006938E8 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		81985A132538076300ADD03C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		81B8A3B82531A9390088443F /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		81F8F39225245870001991EE /* ThreeSquared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeSquared.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 				81F8F3AB252458BC001991EE /* HowToViewController.swift */,
 				81985A132538076300ADD03C /* MenuViewController.swift */,
 				81309F36253B10BE006938E8 /* UserViewController.swift */,
+				81309F3A253D7F88006938E8 /* RankingViewController.swift */,
 				81F8F39B25245871001991EE /* Main.storyboard */,
 				81F8F39E25245873001991EE /* Assets.xcassets */,
 				81F8F3A025245873001991EE /* LaunchScreen.storyboard */,
@@ -233,6 +236,7 @@
 				81F8F39825245871001991EE /* SceneDelegate.swift in Sources */,
 				81F8F3AC252458BC001991EE /* HowToViewController.swift in Sources */,
 				81B8A3B92531A9390088443F /* ResultViewController.swift in Sources */,
+				81309F3B253D7F88006938E8 /* RankingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

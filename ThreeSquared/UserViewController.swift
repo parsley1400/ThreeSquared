@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class UserViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate{
     @IBOutlet var imageView: UIImageView!
@@ -15,8 +18,12 @@ class UserViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     var myImage: UIImage!
     var myName: String!
+    var score: Int = 0
     
     let saveScore: UserDefaults = UserDefaults.standard
+    
+    var ref: DatabaseReference!
+    var uid: String! = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +44,11 @@ class UserViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         if saveScore.object(forKey:"userboolean") as? Bool == true{
                    nameText.text = saveScore.object(forKey:"name") as? String
-                   imageView.image = saveScore.object(forKey:"image") as? UIImage
+//                   imageView.image = saveScore.object(forKey:"image") as? UIImage
                }
+
+        ref = Database.database().reference()
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -70,9 +80,32 @@ class UserViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func saveActionButton(){
-        saveScore.set(nameText.text, forKey:"name")
-        saveScore.set(imageView.image, forKey:"image")
-        saveScore.set(true, forKey:"userboolean")
+        if saveScore.object(forKey:"userboolean") as? Bool == true{
+            let userID = Auth.auth().currentUser?.uid
+                let newdata = ["username": NSString(string: self.nameText.text ?? "name")]
+                self.ref.child("user").child(userID!).updateChildValues(newdata)
+        }else{
+        Auth.auth().signInAnonymously() { (authResult, error) in
+            if error != nil{
+                print("Auth Error :\(error!.localizedDescription)")
+            }
+            guard let user = authResult?.user else { return }
+            //            let isAnonymous = user.isAnonymous
+            self.uid = user.uid
+            return
+                
+                self.ref.child("user").child(user.uid).setValue(["userid": self.uid ?? " ", "username": NSString(string: self.nameText.text ?? "name"), "highscore": NSNumber(integerLiteral: self.score)])
+        }
+        }
+        
+        
+        
+
+                saveScore.set(nameText.text, forKey:"name")
+        //        saveScore.set(imageView.image, forKey:"image")
+                saveScore.set(true, forKey:"userboolean")
+
+        
     }
     
 

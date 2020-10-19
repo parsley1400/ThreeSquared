@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class ViewController: UIViewController {
     
@@ -23,10 +26,14 @@ class ViewController: UIViewController {
     var scoreArray = [Int]()
     
     let saveScore: UserDefaults = UserDefaults.standard
+    
+    var ref: DatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        ref = Database.database().reference()
         
         navigationController?.setNavigationBarHidden(true, animated: false)
         
@@ -47,9 +54,10 @@ class ViewController: UIViewController {
         
         if saveScore.object(forKey:"userboolean") as? Bool == true{
             myName = saveScore.object(forKey:"name") as? String
-            myImage = saveScore.object(forKey:"image") as? UIImage
             nameLabel.text = myName
-            imageButton.setImage(myImage, for: .normal)
+            let userID = Auth.auth().currentUser?.uid
+                let newdata = ["highscore": score]
+                self.ref.child("user").child(userID!).updateChildValues(newdata)
         }
     }
     

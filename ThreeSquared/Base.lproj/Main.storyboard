@@ -91,6 +91,18 @@
                                 <color key="textColor" red="0.65098039220000004" green="0.25882352939999997" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aj1-PO-H2P">
+                                <rect key="frame" x="166" y="706" width="83" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.73333333329999995" green="0.85882352939999995" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
+                                <state key="normal" title="RANKING">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.45882352939999999" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="SHH-PB-biT" kind="presentation" id="lOt-29-1Ng"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9882352941176471" green="0.94117647058823528" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -639,6 +651,46 @@
             </objects>
             <point key="canvasLocation" x="3157.971014492754" y="129.91071428571428"/>
         </scene>
+        <!--Ranking View Controller-->
+        <scene sceneID="KI6-uD-PfV">
+            <objects>
+                <viewController id="SHH-PB-biT" customClass="RankingViewController" customModule="ThreeSquared" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BRW-vA-Lm7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IWi-SJ-0rc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="Mbh-As-SmA">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mbh-As-SmA" id="IT1-3r-V6Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="IWi-SJ-0rc" firstAttribute="leading" secondItem="lfI-2g-z3u" secondAttribute="leading" id="6Mp-ji-sOq"/>
+                            <constraint firstItem="lfI-2g-z3u" firstAttribute="bottom" secondItem="IWi-SJ-0rc" secondAttribute="bottom" id="A3S-ei-Zvt"/>
+                            <constraint firstItem="IWi-SJ-0rc" firstAttribute="top" secondItem="lfI-2g-z3u" secondAttribute="top" id="LQT-U8-vxk"/>
+                            <constraint firstItem="lfI-2g-z3u" firstAttribute="trailing" secondItem="IWi-SJ-0rc" secondAttribute="trailing" id="aLj-tx-ipI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lfI-2g-z3u"/>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="IWi-SJ-0rc" id="Wxn-Jw-ool"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebK-Na-HLJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="351" y="860"/>
+        </scene>
         <!--User View Controller-->
         <scene sceneID="PFM-4B-4WO">
             <objects>
@@ -685,7 +737,8 @@
                                     <color key="titleColor" red="0.98823529409999999" green="0.94117647059999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveActionButton" destination="Qpc-e8-BxH" eventType="touchUpOutside" id="DHn-no-TXp"/>
+                                    <action selector="saveActionButton" destination="Qpc-e8-BxH" eventType="touchUpInside" id="hvf-qU-8VE"/>
+                                    <segue destination="wm0-L9-1lE" kind="unwind" unwindAction="backToHomeWithSegue:" id="u4t-1d-9qd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -710,6 +763,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNx-65-nu4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="wm0-L9-1lE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="859.82142857142856"/>
         </scene>

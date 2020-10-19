@@ -309,6 +309,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     func useTimer1(){
+            fieldArray[0] = "none"
             timer1 = Timer.scheduledTimer(
                 timeInterval: 0.3,
                 target: self,
@@ -319,6 +320,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     func useTimer2(){
+        fieldArray[1] = "none"
             timer2 = Timer.scheduledTimer(
                 timeInterval: 0.3,
                 target: self,
@@ -329,6 +331,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     func useTimer3(){
+        fieldArray[2] = "none"
             timer3 = Timer.scheduledTimer(
                 timeInterval: 0.3,
                 target: self,
@@ -339,6 +342,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     func useTimer4(){
+        fieldArray[3] = "none"
             timer4 = Timer.scheduledTimer(
                 timeInterval: 0.3,
                 target: self,
@@ -349,6 +353,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     func useTimer5(){
+        fieldArray[4] = "none"
             timer5 = Timer.scheduledTimer(
                 timeInterval: 0.3,
                 target: self,
@@ -359,6 +364,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     func useTimer6(){
+        fieldArray[5] = "none"
             timer6 = Timer.scheduledTimer(
                 timeInterval: 0.3,
                 target: self,
@@ -369,6 +375,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     func useTimer7(){
+        fieldArray[6] = "none"
             timer7 = Timer.scheduledTimer(
                 timeInterval: 0.3,
                 target: self,
@@ -379,6 +386,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     func useTimer8(){
+        fieldArray[7] = "none"
             timer8 = Timer.scheduledTimer(
                 timeInterval: 0.3,
                 target: self,
@@ -389,6 +397,7 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     func useTimer9(){
+        fieldArray[8] = "none"
             timer9 = Timer.scheduledTimer(
                 timeInterval: 0.3,
                 target: self,
@@ -400,47 +409,38 @@ class GameViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @objc func removePiece1(){
         fieldImage1.image = nil
-        fieldArray[0] = "none"
     }
     
     @objc func removePiece2(){
         fieldImage2.image = nil
-        fieldArray[1] = "none"
     }
     
     @objc func removePiece3(){
         fieldImage3.image = nil
-        fieldArray[2] = "none"
     }
     
     @objc func removePiece4(){
         fieldImage4.image = nil
-        fieldArray[3] = "none"
     }
     
     @objc func removePiece5(){
         fieldImage5.image = nil
-        fieldArray[4] = "none"
     }
     
     @objc func removePiece6(){
         fieldImage6.image = nil
-        fieldArray[5] = "none"
     }
     
     @objc func removePiece7(){
         fieldImage7.image = nil
-        fieldArray[6] = "none"
     }
     
     @objc func removePiece8(){
         fieldImage8.image = nil
-        fieldArray[7] = "none"
     }
     
     @objc func removePiece9(){
         fieldImage9.image = nil
-        fieldArray[8] = "none"
     }
     
     @objc func tapped1(_ sender: UITapGestureRecognizer){
